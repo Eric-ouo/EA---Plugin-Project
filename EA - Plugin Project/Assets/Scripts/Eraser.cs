@@ -9,7 +9,7 @@ public class Eraser : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))  // Right mouse button to erase
+        if (Input.GetMouseButtonDown(0))  // Right mouse button to erase
         {
             Vector2 mousePosition = drawCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10));
 
