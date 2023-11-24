@@ -7,7 +7,7 @@ public class Draw : MonoBehaviour
     public float lineWidth = 0.1f;
 
     private GameObject line;
-    private LineRenderer lineRenderer;
+    public LineRenderer lineRenderer;
     private Collider2D lineCollider;
 
     void Update()
