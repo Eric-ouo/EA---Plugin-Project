@@ -1711,6 +1711,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1054210401}
+  - {fileID: 1777930179}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2954,7 +2955,6 @@ RectTransform:
   - {fileID: 457372889}
   - {fileID: 662466359}
   - {fileID: 484844488}
-  - {fileID: 1777930179}
   - {fileID: 95347934}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -5206,7 +5206,7 @@ GameObject:
   - component: {fileID: 1777930181}
   - component: {fileID: 1777930182}
   m_Layer: 5
-  m_Name: NoDrawArea(not finished)
+  m_Name: NoDrawArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5219,18 +5219,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1777930178}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 9.7914715, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalScale: {x: 35.60768, y: 3.8587635, z: 2.6529}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 965348545}
+  m_Father: {fileID: 519420032}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0014081, y: 154.6522}
-  m_SizeDelta: {x: 98.862, y: 97.696}
+  m_AnchoredPosition: {x: -0.040893555, y: 5.4836426}
+  m_SizeDelta: {x: 0.01, y: 0.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &1777930181
 BoxCollider2D:
