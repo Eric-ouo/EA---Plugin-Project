@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ColorControl : MonoBehaviour
+public class DrawControl : MonoBehaviour
 {
     public Draw draw;
     private Button white;
@@ -42,6 +42,9 @@ public class ColorControl : MonoBehaviour
     public Slider R;
     public Slider G;
     public Slider B;
+    public Slider S;
+
+    public float size;
 
 
     public void Start()
@@ -97,7 +100,8 @@ public class ColorControl : MonoBehaviour
         R.onValueChanged.AddListener(changeR);
         G.onValueChanged.AddListener(changeG);
         B.onValueChanged.AddListener(changeB);
-        CustomColor.color =Color.black;
+        S.onValueChanged.AddListener(changeS);
+        CustomColor.color = Color.black;
     }
 
     public void TaskOnClick(string ButtonName)
@@ -173,5 +177,11 @@ public class ColorControl : MonoBehaviour
         Color customcolor = CustomColor.color;
         customcolor.b = value;
         CustomColor.color = customcolor;
+    }
+    private void changeS(float value)
+    {
+        size = draw.lineWidth;
+        size = value;
+        draw.lineWidth = size;
     }
 }
