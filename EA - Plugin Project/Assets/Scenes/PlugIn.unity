@@ -1730,6 +1730,7 @@ MonoBehaviour:
   draw: {fileID: 519420035}
   eraser: {fileID: 519420034}
   drawControl: {fileID: 0}
+  CircleTool: {fileID: 0}
   colorBoard: {fileID: 662466358}
   colorBar: {fileID: 484844487}
   sizeBar: {fileID: 95347933}
@@ -2428,7 +2429,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 690586605}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: 5b80d19124fc2a144b63609e1d10339e, type: 3}
+        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &690586605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4453,6 +4466,7 @@ GameObject:
   - component: {fileID: 1455023518}
   - component: {fileID: 1455023517}
   - component: {fileID: 1455023516}
+  - component: {fileID: 1455023519}
   m_Layer: 5
   m_Name: Line Tool
   m_TagString: Untagged
@@ -4563,6 +4577,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1455023514}
   m_CullTransparentMesh: 1
+--- !u!114 &1455023519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455023514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bc69b8a49fd724cbc34cc6425c5616, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drawCamera: {fileID: 519420031}
+  lineMaterial: {fileID: 0}
+  lineWidth: 0.1
+  currentLineRenderer: {fileID: 0}
+  lastPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1456900591
 GameObject:
   m_ObjectHideFlags: 0
@@ -5155,7 +5186,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1668301585}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: 5b80d19124fc2a144b63609e1d10339e, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1668301585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5581,7 +5624,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1888715969}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: 5b80d19124fc2a144b63609e1d10339e, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1888715969
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ public class ButtonControl : MonoBehaviour
     public Draw draw;
     public Eraser eraser;
     public DrawControl drawControl;
-
+    public CircleTool CircleTool;
     private Button PencilButton;
     private Button EraserButton;
     private Button FillButton;
@@ -14,7 +14,7 @@ public class ButtonControl : MonoBehaviour
     private Button SquareButton;
     private Button LineButton;
     private Button ColorButton;
-
+    private Color fillColor = Color.white;
     private bool colorboard = true;
 
     public GameObject colorBoard;
@@ -62,7 +62,9 @@ void Start()
     }
     public void EnableFill()
     {
-
+        draw.enabled = false;
+        eraser.enabled = false;
+        FillScreen fillScreen = FindObjectOfType<FillScreen>();
     }
 
     public void EnableCircle()
@@ -72,7 +74,9 @@ void Start()
 
     public void EnableSquare()
     {
-
+        draw.enabled = true;
+        eraser.enabled = false;
+        SquareTool squareTool = FindObjectOfType<SquareTool>();
     }
 
     public void EnableLine()
