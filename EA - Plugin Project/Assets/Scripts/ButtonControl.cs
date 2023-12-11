@@ -6,13 +6,15 @@ public class ButtonControl : MonoBehaviour
     public Draw draw;
     public Eraser eraser;
     public DrawControl drawControl;
-    public CircleTool CircleTool;
+    public CircleTool circleTool;
+    public SquareTool squareTool;
+    public FillScreen fillscreen;
     private Button PencilButton;
     private Button EraserButton;
     private Button FillButton;
     private Button CircleButton;
     private Button SquareButton;
-    private Button LineButton;
+    //private Button LineButton;
     private Button ColorButton;
     private Color fillColor = Color.white;
     private bool colorboard = true;
@@ -28,7 +30,7 @@ void Start()
         FillButton = GameObject.Find("Fill").GetComponent<Button>();
         CircleButton = GameObject.Find("Circle").GetComponent<Button>();
         SquareButton = GameObject.Find("Square").GetComponent<Button>();
-        LineButton = GameObject.Find("Line Tool").GetComponent<Button>();
+        //LineButton = GameObject.Find("Line Tool").GetComponent<Button>();
         ColorButton = GameObject.Find("Color").GetComponent <Button>();
 
         PencilButton.onClick.AddListener(EnableDrawing);
@@ -36,11 +38,14 @@ void Start()
         FillButton.onClick.AddListener(EnableFill);
         CircleButton.onClick.AddListener(EnableCircle);
         SquareButton.onClick.AddListener(EnableSquare);
-        LineButton.onClick.AddListener(EnableLine);
+        //LineButton.onClick.AddListener(EnableLine);
         ColorButton.onClick.AddListener(BoardAndBarControl);
 
         draw.enabled = false;
         eraser.enabled = false;
+        circleTool.enabled = false;
+        squareTool.enabled = false;
+        fillscreen.enabled = false;
 
         colorBar.SetActive(false);
         sizeBar.SetActive(false);
@@ -49,6 +54,9 @@ void Start()
     {
         draw.enabled = true;
         eraser.enabled = false;
+        circleTool.enabled = false;
+        squareTool.enabled = false;
+        fillscreen.enabled = false;
         sizeBar.SetActive(true);
         colorBoard.SetActive(false);
         colorboard = false;
@@ -59,30 +67,41 @@ void Start()
     {
         draw.enabled = false;
         eraser.enabled = true;
+        circleTool.enabled = false;
+        squareTool.enabled = false;
+        fillscreen.enabled = false;
     }
     public void EnableFill()
     {
         draw.enabled = false;
         eraser.enabled = false;
-        FillScreen fillScreen = FindObjectOfType<FillScreen>();
+        fillscreen.enabled = true;
+        circleTool.enabled = false;
+        squareTool.enabled = false;
     }
 
     public void EnableCircle()
     {
-
+        draw.enabled = false;
+        eraser.enabled = false;
+        circleTool.enabled = true;
+        squareTool.enabled = false;
+        fillscreen.enabled = false;
     }
 
     public void EnableSquare()
     {
         draw.enabled = true;
         eraser.enabled = false;
-        SquareTool squareTool = FindObjectOfType<SquareTool>();
+        circleTool.enabled = false;
+        squareTool.enabled = true;
+        fillscreen.enabled = false;
     }
 
-    public void EnableLine()
+   /*public void EnableLine()
     {
 
-    }
+    }*/
 
     public void BoardAndBarControl()
     {
