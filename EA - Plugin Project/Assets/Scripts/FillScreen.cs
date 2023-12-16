@@ -6,6 +6,15 @@ public class FillScreen : MonoBehaviour
 {
     public Camera mainCamera; // Assign this through the inspector or find it via code
 
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Color selectedColor = GetSelectedColor();
+            FillWithColor(selectedColor);
+        }
+    }
+
     public void FillWithColor(Color colorToFill)
     {
         // This assumes you have a reference to the main camera

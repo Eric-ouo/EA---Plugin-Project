@@ -4,31 +4,33 @@ using UnityEngine;
 
 public class CircleTool : MonoBehaviour
 {
-
-    public float radius = 5f;
-    public float lineWidth = 0.2f;
+    public float radius = 0.5f;
+    public float lineWidth;
     public int segments = 360;
-    public Material lineMaterial;
+    public Draw draw;
 
-
-    public GameObject CreateCircle(Vector3 centerPosition)
+    private void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            CreateCircle(mousePosition);
+        }
+    }
 
+    public GameObject CreateCircle(Vector2 centerPosition)
+    {
         GameObject circleGO = new GameObject("Circle");
         circleGO.transform.position = centerPosition;
 
-
         LineRenderer lineRenderer = circleGO.AddComponent<LineRenderer>();
 
-
-        lineRenderer.material = lineMaterial;
-
+        lineRenderer.material = draw.lineMaterial;
 
         lineRenderer.positionCount = segments + 1;
 
-        lineRenderer.startWidth = lineWidth;
-        lineRenderer.endWidth = lineWidth;
-
+        lineRenderer.startWidth = draw.lineWidth;
+        lineRenderer.endWidth = draw.lineWidth;
 
         float deltaTheta = (2f * Mathf.PI) / segments;
         float theta = 0f;
@@ -37,11 +39,14 @@ public class CircleTool : MonoBehaviour
         {
             float x = radius * Mathf.Cos(theta);
             float y = radius * Mathf.Sin(theta);
-            Vector3 pos = new Vector3(x, y, 0f) + centerPosition;
+            Vector2 pos = new Vector2(x, y) + centerPosition;
             lineRenderer.SetPosition(i, pos);
             theta += deltaTheta;
         }
 
-        return circleGO; 
+        CircleCollider2D circleCollider = circleGO.AddComponent<CircleCollider2D>();
+        circleCollider.radius = radius;
+
+        return circleGO;
     }
 }

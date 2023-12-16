@@ -1826,8 +1826,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 5
   lineWidth: 0.2
-  segments: 360
-  lineMaterial: {fileID: 2100000, guid: 2eaef1997af7108439ec04aefcb5976b, type: 2}
+  segments: 36
+  draw: {fileID: 519420035}
 --- !u!1 &531990393
 GameObject:
   m_ObjectHideFlags: 0
