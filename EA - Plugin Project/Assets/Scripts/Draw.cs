@@ -17,7 +17,7 @@ public class Draw : MonoBehaviour
         {
             if (noDrawArea.IsInsideNoDrawArea(Input.mousePosition)) // Check if mouse position is inside the no draw area
             {
-                Debug.Log("trigger");
+                //Debug.Log("trigger");
                 return; // Do not create a new line if inside the no draw area
             }
 

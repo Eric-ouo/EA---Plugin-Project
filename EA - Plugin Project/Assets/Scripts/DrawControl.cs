@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class DrawControl : MonoBehaviour
 {
     public Draw draw;
+    public CircleTool circleTool;
     private Button white;
     private Button black;
     private Button sliver;
@@ -43,8 +44,10 @@ public class DrawControl : MonoBehaviour
     public Slider G;
     public Slider B;
     public Slider S;
+    public Slider Radius;
 
     public float size;
+    public float radius;
 
 
     public void Start()
@@ -101,6 +104,7 @@ public class DrawControl : MonoBehaviour
         G.onValueChanged.AddListener(changeG);
         B.onValueChanged.AddListener(changeB);
         S.onValueChanged.AddListener(changeS);
+        Radius.onValueChanged.AddListener(changeRadius);
         CustomColor.color = Color.black;
     }
 
@@ -183,5 +187,13 @@ public class DrawControl : MonoBehaviour
         size = draw.lineWidth;
         size = value;
         draw.lineWidth = size;
+    }
+    private void changeRadius(float value)
+    {
+        float minRadius = 1f; // Minimum radius value
+        float maxRadius = 5f; // Maximum radius value
+
+        radius = Mathf.Lerp(minRadius, maxRadius, value);
+        circleTool.radius = radius;
     }
 }

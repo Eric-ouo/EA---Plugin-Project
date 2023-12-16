@@ -9,36 +9,27 @@ public class ButtonControl : MonoBehaviour
     public CircleTool circleTool;
     public SquareTool squareTool;
     public FillScreen fillscreen;
-    private Button PencilButton;
-    private Button EraserButton;
-    private Button FillButton;
-    private Button CircleButton;
-    private Button SquareButton;
-    //private Button LineButton;
-    private Button ColorButton;
-    private Color fillColor = Color.white;
-    private bool colorboard = true;
-
     public GameObject colorBoard;
     public GameObject colorBar;
     public GameObject sizeBar;
+    public GameObject radiusBar;
 
-void Start()
+    [SerializeField] private Button PencilButton;
+    [SerializeField] private Button EraserButton;
+    [SerializeField] private Button FillButton;
+    [SerializeField] private Button CircleButton;
+    [SerializeField] private Button SquareButton;
+    [SerializeField] private Button ColorButton;
+
+    private bool colorboard = true;
+
+    void Start()
     {
-        PencilButton = GameObject.Find("Pencil").GetComponent<Button>();
-        EraserButton = GameObject.Find("Eraser").GetComponent<Button>();
-        FillButton = GameObject.Find("Fill").GetComponent<Button>();
-        CircleButton = GameObject.Find("Circle").GetComponent<Button>();
-        SquareButton = GameObject.Find("Square").GetComponent<Button>();
-        //LineButton = GameObject.Find("Line Tool").GetComponent<Button>();
-        ColorButton = GameObject.Find("Color").GetComponent <Button>();
-
         PencilButton.onClick.AddListener(EnableDrawing);
         EraserButton.onClick.AddListener(EnableErasing);
         FillButton.onClick.AddListener(EnableFill);
         CircleButton.onClick.AddListener(EnableCircle);
         SquareButton.onClick.AddListener(EnableSquare);
-        //LineButton.onClick.AddListener(EnableLine);
         ColorButton.onClick.AddListener(BoardAndBarControl);
 
         draw.enabled = false;
@@ -49,6 +40,7 @@ void Start()
 
         colorBar.SetActive(false);
         sizeBar.SetActive(false);
+        radiusBar.SetActive(false);
     }
     public void EnableDrawing()
     {
@@ -61,6 +53,7 @@ void Start()
         colorBoard.SetActive(false);
         colorboard = false;
         colorBar.SetActive(false);
+        radiusBar.SetActive(false);
     }
 
     public void EnableErasing()
@@ -87,6 +80,10 @@ void Start()
         circleTool.enabled = true;
         squareTool.enabled = false;
         fillscreen.enabled = false;
+        radiusBar.SetActive(true);
+        colorBoard.SetActive(false);
+        colorBar.SetActive(false);
+        sizeBar.SetActive(false);
     }
 
     public void EnableSquare()
@@ -110,6 +107,7 @@ void Start()
             colorBoard.SetActive(false);
             colorBar.SetActive(true);
             sizeBar.SetActive(false);
+            radiusBar.SetActive(false);
             colorboard = false;
             draw.lineMaterial = drawControl.CustomColor;
 
@@ -119,6 +117,7 @@ void Start()
             colorBoard.SetActive(true);
             colorBar.SetActive(false);
             sizeBar.SetActive(false);
+            radiusBar.SetActive(false);
             colorboard = true;
         }
     }
