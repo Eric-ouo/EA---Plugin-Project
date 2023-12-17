@@ -184,8 +184,10 @@ public class DrawControl : MonoBehaviour
     }
     private void changeS(float value)
     {
-        size = draw.lineWidth;
-        size = value;
+        float minsize = 0.1f; // Minimum radius value
+        float maxsize = 1f; // Maximum radius value
+
+        size = Mathf.Lerp(minsize, maxsize, value);
         draw.lineWidth = size;
     }
     private void changeRadius(float value)
