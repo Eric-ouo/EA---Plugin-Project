@@ -96,12 +96,16 @@ public class ButtonControl : MonoBehaviour
 
     public void EnableSquare()
     {
-        draw.enabled = true;
+        draw.enabled = false;
         eraser.enabled = false;
         circleTool.enabled = false;
         squareTool.enabled = true;
         fillscreen.enabled = false;
         lineTool.enabled = false;
+        radiusBar.SetActive(true);
+        colorBoard.SetActive(false);
+        colorBar.SetActive(false);
+        sizeBar.SetActive(false);
     }
 
    public void Enableline()
