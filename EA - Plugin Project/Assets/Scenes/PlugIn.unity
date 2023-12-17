@@ -2047,7 +2047,7 @@ MonoBehaviour:
   drawControl: {fileID: 662466360}
   circleTool: {fileID: 519420039}
   squareTool: {fileID: 519420038}
-  starTool: {fileID: 519420041}
+  lineTool: {fileID: 519420041}
   fillscreen: {fileID: 519420037}
   colorBoard: {fileID: 662466358}
   colorBar: {fileID: 484844487}
@@ -2059,7 +2059,7 @@ MonoBehaviour:
   CircleButton: {fileID: 690586604}
   SquareButton: {fileID: 1888715968}
   ColorButton: {fileID: 457372890}
-  StarButton: {fileID: 1455023516}
+  LineButton: {fileID: 1455023516}
 --- !u!114 &519420041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2069,13 +2069,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffbe26db879e84a4c82fd3224d030cdc, type: 3}
+  m_Script: {fileID: 11500000, guid: 75e5ef80e879b814db4d15e188b1cb4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numPoints: 5
-  outerRadius: 1
-  innerRadius: 0.5
   lineMaterial: {fileID: 0}
+  lineWidth: 0
+  draw: {fileID: 519420035}
   noDrawArea: {fileID: 1777930182}
 --- !u!1 &531990393
 GameObject:
@@ -4767,7 +4766,7 @@ GameObject:
   - component: {fileID: 1455023517}
   - component: {fileID: 1455023516}
   m_Layer: 5
-  m_Name: Star
+  m_Name: Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5659,7 +5658,7 @@ RectTransform:
   m_GameObject: {fileID: 1777930178}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 10}
-  m_LocalScale: {x: 35.60768, y: 3.8587635, z: 2.6529}
+  m_LocalScale: {x: 104.597565, y: 25.398245, z: 2.6529}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 519420032}
@@ -5667,7 +5666,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.040893555, y: 5.4836426}
+  m_AnchoredPosition: {x: -0.040893555, y: 16.49}
   m_SizeDelta: {x: 0.01, y: 0.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &1777930181
