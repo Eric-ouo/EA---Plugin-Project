@@ -37,25 +37,34 @@ public class LineTool : MonoBehaviour
             lineRenderer.startWidth = lineWidth;
             lineRenderer.endWidth = lineWidth;
 
-            // Set the start position of the line renderer
+            // Set the positions of the line renderer
             lineRenderer.SetPosition(0, startPosition);
+            lineRenderer.SetPosition(1, startPosition); // Set the end position to start position initially
         }
-        else if (Input.GetMouseButtonUp(0))
+        else if (Input.GetMouseButton(0))
         {
-            // Set the end position of the line
-            endPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            endPosition.z = 0f;
-
             // Check if the end position is inside the no draw area
-            if (noDrawArea.IsInsideNoDrawArea(endPosition))
+            Vector3 currentMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            currentMousePosition.z = 0f;
+
+            if (noDrawArea.IsInsideNoDrawArea(currentMousePosition))
             {
                 // Delete the line object
-                Destroy(lineRenderer.gameObject);
+                return;
             }
             else
             {
                 // Set the end position of the line renderer
-                lineRenderer.SetPosition(1, endPosition);
+                lineRenderer.SetPosition(1, currentMousePosition);
+            }
+        }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            // Check if the end position is inside the no draw area
+            if (noDrawArea.IsInsideNoDrawArea(endPosition))
+            {
+                // Delete the line object
+                return;
             }
         }
     }
