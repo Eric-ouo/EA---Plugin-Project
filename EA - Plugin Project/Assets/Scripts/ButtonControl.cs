@@ -91,7 +91,7 @@ public class ButtonControl : MonoBehaviour
         radiusBar.SetActive(true);
         colorBoard.SetActive(false);
         colorBar.SetActive(false);
-        sizeBar.SetActive(false);
+        sizeBar.SetActive(true);
     }
 
     public void EnableSquare()
@@ -105,7 +105,7 @@ public class ButtonControl : MonoBehaviour
         radiusBar.SetActive(true);
         colorBoard.SetActive(false);
         colorBar.SetActive(false);
-        sizeBar.SetActive(false);
+        sizeBar.SetActive(true);
     }
 
    public void Enableline()

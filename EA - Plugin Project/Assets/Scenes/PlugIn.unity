@@ -2007,12 +2007,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 691a255d3c951e04b92b60d7eda05f00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  squarePrefab: {fileID: 0}
+  radius: 1
+  lineWidth: 0.1
+  segments: 4
+  draw: {fileID: 519420035}
+  circleTool: {fileID: 0}
+  noDrawArea: {fileID: 1777930182}
 --- !u!114 &519420039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2072,7 +2077,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75e5ef80e879b814db4d15e188b1cb4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineMaterial: {fileID: 0}
   lineWidth: 0
   draw: {fileID: 519420035}
   noDrawArea: {fileID: 1777930182}

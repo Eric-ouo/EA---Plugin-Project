@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class LineTool : MonoBehaviour
 {
-    public Material lineMaterial; // Material for the line
-
     private Vector3 startPosition;
     private Vector3 endPosition;
     private LineRenderer lineRenderer;

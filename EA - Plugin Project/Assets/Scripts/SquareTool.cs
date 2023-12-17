@@ -2,16 +2,18 @@ using UnityEngine;
 
 public class SquareTool : MonoBehaviour
 {
-    public float radius = 1f; 
+    public float radius; 
     public float lineWidth = 0.1f; 
     public int segments = 4; 
-    public Material lineMaterial; 
+    public Draw draw; 
+    public CircleTool circleTool;
     public NoDrawArea noDrawArea; 
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
+            radius = circleTool.radius;
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePosition.z = 0;
             CreateSquare(mousePosition);
@@ -22,19 +24,18 @@ public class SquareTool : MonoBehaviour
     {
         if (noDrawArea != null && noDrawArea.IsInsideNoDrawArea(centerPosition))
         {
-            Debug.Log("Cannot draw in the No Draw Area.");
             return null;
         }
 
         GameObject squareGO = new GameObject("Square");
         LineRenderer lineRenderer = squareGO.AddComponent<LineRenderer>();
-
-        lineRenderer.material = lineMaterial;
+        squareGO.tag = "line";
+        lineRenderer.material = draw.lineMaterial;
 
         lineRenderer.positionCount = segments + 1; 
 
-        lineRenderer.startWidth = lineWidth;
-        lineRenderer.endWidth = lineWidth;
+        lineRenderer.startWidth = draw.lineWidth;
+        lineRenderer.endWidth = draw.lineWidth;
 
         Vector3[] points = new Vector3[segments + 1];
 
@@ -46,6 +47,9 @@ public class SquareTool : MonoBehaviour
 
         lineRenderer.SetPositions(points);
 
+        BoxCollider2D boxCollider = squareGO.AddComponent<BoxCollider2D>();
+        Vector2 colliderSize = new Vector2(radius * 2, radius * 2);
+        boxCollider.size = colliderSize;
         return squareGO;
     }
 }
