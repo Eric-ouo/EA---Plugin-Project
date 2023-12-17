@@ -1856,6 +1856,7 @@ GameObject:
   - component: {fileID: 519420039}
   - component: {fileID: 519420038}
   - component: {fileID: 519420037}
+  - component: {fileID: 519420041}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2046,6 +2047,7 @@ MonoBehaviour:
   drawControl: {fileID: 662466360}
   circleTool: {fileID: 519420039}
   squareTool: {fileID: 519420038}
+  starTool: {fileID: 519420041}
   fillscreen: {fileID: 519420037}
   colorBoard: {fileID: 662466358}
   colorBar: {fileID: 484844487}
@@ -2057,6 +2059,24 @@ MonoBehaviour:
   CircleButton: {fileID: 690586604}
   SquareButton: {fileID: 1888715968}
   ColorButton: {fileID: 457372890}
+  StarButton: {fileID: 1455023516}
+--- !u!114 &519420041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffbe26db879e84a4c82fd3224d030cdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numPoints: 5
+  outerRadius: 1
+  innerRadius: 0.5
+  lineMaterial: {fileID: 0}
+  noDrawArea: {fileID: 1777930182}
 --- !u!1 &531990393
 GameObject:
   m_ObjectHideFlags: 0
@@ -4747,7 +4767,7 @@ GameObject:
   - component: {fileID: 1455023517}
   - component: {fileID: 1455023516}
   m_Layer: 5
-  m_Name: Line Tool
+  m_Name: Star
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6000,7 +6020,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 5b80d19124fc2a144b63609e1d10339e, type: 3}
+      - m_Target: {fileID: 11500000, guid: 691a255d3c951e04b92b60d7eda05f00, type: 3}
         m_TargetAssemblyTypeName: 
         m_MethodName: 
         m_Mode: 1

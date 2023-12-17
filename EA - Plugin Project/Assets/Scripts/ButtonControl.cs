@@ -8,6 +8,7 @@ public class ButtonControl : MonoBehaviour
     public DrawControl drawControl;
     public CircleTool circleTool;
     public SquareTool squareTool;
+    public LineTool lineTool;
     public FillScreen fillscreen;
     public GameObject colorBoard;
     public GameObject colorBar;
@@ -20,6 +21,7 @@ public class ButtonControl : MonoBehaviour
     [SerializeField] private Button CircleButton;
     [SerializeField] private Button SquareButton;
     [SerializeField] private Button ColorButton;
+    [SerializeField] private Button LineButton;
 
     private bool colorboard = true;
 
@@ -31,12 +33,14 @@ public class ButtonControl : MonoBehaviour
         CircleButton.onClick.AddListener(EnableCircle);
         SquareButton.onClick.AddListener(EnableSquare);
         ColorButton.onClick.AddListener(BoardAndBarControl);
+        LineButton.onClick.AddListener(Enableline);
 
         draw.enabled = false;
         eraser.enabled = false;
         circleTool.enabled = false;
         squareTool.enabled = false;
         fillscreen.enabled = false;
+        lineTool.enabled = false;
 
         colorBar.SetActive(false);
         sizeBar.SetActive(false);
@@ -49,6 +53,7 @@ public class ButtonControl : MonoBehaviour
         circleTool.enabled = false;
         squareTool.enabled = false;
         fillscreen.enabled = false;
+        lineTool.enabled = false;
         sizeBar.SetActive(true);
         colorBoard.SetActive(false);
         colorboard = false;
@@ -63,6 +68,7 @@ public class ButtonControl : MonoBehaviour
         circleTool.enabled = false;
         squareTool.enabled = false;
         fillscreen.enabled = false;
+        lineTool.enabled = false;
     }
     public void EnableFill()
     {
@@ -71,6 +77,7 @@ public class ButtonControl : MonoBehaviour
         fillscreen.enabled = true;
         circleTool.enabled = false;
         squareTool.enabled = false;
+        lineTool.enabled = false;
     }
 
     public void EnableCircle()
@@ -80,6 +87,7 @@ public class ButtonControl : MonoBehaviour
         circleTool.enabled = true;
         squareTool.enabled = false;
         fillscreen.enabled = false;
+        lineTool.enabled = false;
         radiusBar.SetActive(true);
         colorBoard.SetActive(false);
         colorBar.SetActive(false);
@@ -93,12 +101,22 @@ public class ButtonControl : MonoBehaviour
         circleTool.enabled = false;
         squareTool.enabled = true;
         fillscreen.enabled = false;
+        lineTool.enabled = false;
     }
 
-   /*public void EnableLine()
+   public void Enableline()
     {
-
-    }*/
+        draw.enabled = false;
+        eraser.enabled = false;
+        circleTool.enabled = false;
+        squareTool.enabled = false;
+        fillscreen.enabled = false;
+        lineTool.enabled = true;
+        radiusBar.SetActive(false);
+        colorBoard.SetActive(false);
+        colorBar.SetActive(false);
+        sizeBar.SetActive(true);
+    }
 
     public void BoardAndBarControl()
     {
